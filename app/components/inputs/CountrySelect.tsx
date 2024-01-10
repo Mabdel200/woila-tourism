@@ -10,7 +10,7 @@ export type CountrySelectValue = {
   label: string;
   latlng: number[],
   region: string;
-  value: string
+  value: string | number[];
 }
 
 interface CountrySelectProps {
@@ -30,7 +30,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
         placeholder="Anywhere"
         isClearable
         options={countryOptions} 
-        value="CM"
+        value={value} 
         onChange={(value) => onChange(value as CountrySelectValue)}
         formatOptionLabel={(option: any) => (
           <div className="
