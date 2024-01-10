@@ -64,9 +64,14 @@ const Home = async ({ searchParams }: HomeProps) => {
       </Container>
 
        {/* Copyright footer */}
-       <footer className="text-center py-4 text-gray fixed bottom-0 w-full">
-        <p>&copy; {new Date().getFullYear()} All rights reserved woila-tourism, Built with ❤️ by Mister Abz. </p>
+       <footer className="text-center py-4 text-gray-800 bg-gray-300 fixed bottom-0 w-full">
+        <p>
+          &copy; {new Date().getFullYear()} All rights reserved woila-tourism, Built with ❤️ by Mister Abz.{" "}
+        </p>
       </footer>
+       {/* <footer className="text-center py-4 text-gray fixed bottom-0 w-full">
+        <p>&copy; {new Date().getFullYear()} All rights reserved woila-tourism, Built with ❤️ by Mister Abz. </p>
+      </footer> */}
     
     </ClientOnly>
   )
