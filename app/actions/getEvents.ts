@@ -52,7 +52,7 @@ export default async function getEvents(params: IEventsParams) {
     const events = await prisma.event.findMany({
       where: query,
       orderBy: {
-        createdAt: 'desc',
+        id: 'desc',
       },
     });
 
