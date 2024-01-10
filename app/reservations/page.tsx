@@ -5,8 +5,8 @@ import getCurrentUser from "@/app/actions/getCurrentUser";
 import getReservations from "@/app/actions/getReservations";
 
 import TripsClient from "./ReservationsClient";
-import ListingEvent from "../components/listings/ListingEvent";
-import getEvents from "../actions/getEvents";
+// import ListingEvent from "../components/listings/ListingEvent";
+// import getEvents from "../actions/getEvents";
 
 
 const ReservationsPage = async () => {
@@ -24,11 +24,8 @@ const ReservationsPage = async () => {
   }
 
   const reservations = await getReservations({ authorId: currentUser.id });
-  const eventsList = await getEvents({ authorId: currentUser.id });
-  
   console.log(reservations);
-  console.log(eventsList);
-
+  
   if (reservations.length === 0) {
     return (
       <ClientOnly>
@@ -46,9 +43,9 @@ const ReservationsPage = async () => {
         reservations={reservations}
         currentUser={currentUser}
       />
-      <ListingEvent 
+      {/* <ListingEvent 
            events={eventsList}     
-      />
+      /> */}
     </ClientOnly>
   );
 }

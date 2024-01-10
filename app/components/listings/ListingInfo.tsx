@@ -21,7 +21,6 @@ interface ListingInfoProps {
   listingId: string,
   user: SafeUser,
   description: string;
-  department: string;
   category: {
     icon: IconType,
     label: string;
@@ -34,7 +33,6 @@ interface ListingInfoProps {
 const ListingInfo: React.FC<ListingInfoProps> =  ({
   user,
   description,
-  department,
   category,
   locationValue,
   listingId,

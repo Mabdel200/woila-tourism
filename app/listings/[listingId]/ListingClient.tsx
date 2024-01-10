@@ -124,8 +124,9 @@ const ListingClient: React.FC<ListingClientProps> = ({
             imageSrc={listing.imageSrc}
             locationValue={listing.locationValue}
             id={listing.id}
-            currentUser={currentUser}
-          />
+            currentUser={currentUser} 
+            department={listing.department}          
+            />
           <div 
             className="
               grid 
@@ -140,11 +141,8 @@ const ListingClient: React.FC<ListingClientProps> = ({
               user={listing.user}
               category={category}
               description={listing.description}
-              roomCount={listing.roomCount}
-              guestCount={listing.guestCount}
-              bathroomCount={listing.bathroomCount}
-              locationValue={listing.locationValue}
-            />
+              locationValue={listing.locationValue} 
+              />
             <div 
               className="
                 order-first 
@@ -160,8 +158,11 @@ const ListingClient: React.FC<ListingClientProps> = ({
                 dateRange={dateRange}
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
-                disabledDates={disabledDates}
-              />
+                disabledDates={disabledDates} 
+                onAccommodationChange={function (): void {
+                  throw new Error("Function not implemented.");
+                } } isAccommodationRequested={false}              
+                />
             </div>
           </div>
         </div>

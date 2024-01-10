@@ -10,7 +10,7 @@ import HeartButton from "../HeartButton";
 
 interface ListingHeadProps {
   title: string;
-  department: string;
+  department: string | null;
   locationValue: string;
   imageSrc: string;
   id: string;
