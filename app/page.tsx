@@ -63,47 +63,10 @@ const Home = async ({ searchParams }: HomeProps) => {
         </div>
       </Container>
 
-
-      {/* <Container>
-          <div
-            className="
-                pt-16
-                flex-row
-                grid-rows-1 
-                
-            "
-          > 
-            <h1 className="font-bold text-blue-800">Liste des évènements</h1>
-          </div>
-      </Container> */}
-
-      {/* <Container>
-       
-        <div 
-          className="
-            pt-15
-            grid 
-            grid-cols-1 
-            sm:grid-cols-2 
-            md:grid-cols-3 
-            lg:grid-cols-4
-            xl:grid-cols-5
-            2xl:grid-cols-6
-            gap-8
-          "
-        >
-
-         
-           {listings.map((listing: any) => (
-            <ListingCard
-              currentUser={currentUser}
-              key={listing.id}
-              data={listing}
-            />
-          ))}
-
-        </div>
-      </Container> */}
+       {/* Copyright footer */}
+       <footer className="text-center py-4 text-gray fixed bottom-0 w-full">
+        <p>&copy; {new Date().getFullYear()} All rights reserved woila-tourism, Built with ❤️ by Mister Abz. </p>
+      </footer>
     
     </ClientOnly>
   )
