@@ -13,7 +13,7 @@ const Dashboard = () => {
     <>
     <Box>
        <div className="bg-gradient-to-r  from-red-600 via-yellow-400 via-red-600 to-red-700 h-20 mx-auto rounded-md shadow-lg flex items-center justify-center text-center">
-              <h1 className="text-2xl font-bold font-abril-fatface  text-black items-center justify-center text-center">Bienvenue dans l'administration.</h1>
+              <h1 className="text-2xl font-bold font-abril-fatface  text-black items-center justify-center text-center">Bienvenue dans l&apos;administration.</h1>
         </div>
     </Box>
     <br />
@@ -33,12 +33,7 @@ const Dashboard = () => {
               </Grid>
             </Grid>
           </Grid>
-          {/* <Grid item xs={12} lg={4}>
-            <RecentTransactions />
-          </Grid>
-          <Grid item xs={12} lg={8}>
-            <ProductPerformance />
-          </Grid> */}
+        
           <Grid item xs={12}>
             <Blog />
           </Grid>

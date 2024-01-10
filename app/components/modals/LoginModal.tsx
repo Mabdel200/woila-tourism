@@ -139,7 +139,7 @@ const LoginModal = ({ searchParams }: IProps) => {
       /> */}
       <div className="
       text-neutral-500 text-center mt-4 font-light">
-        <p>Vous n'avez pas de compte?
+        <p>Vous n&apos;avez pas de compte?
           <span 
             onClick={onToggle} 
             className="

@@ -91,7 +91,7 @@ const PageListingSite: React.FC<ListingSiteProps> = ({
                   <a href={listing.imageSrc} className="text-blue-500 hover:underline" target="_blank" rel="noopener noreferrer">
                     <button className="btn btn-sm mr-3 bg-purple-600 text-white mt-2 p-2 rounded-md">
                       <IconEye size={20} strokeWidth={2} />
-                    </button>Voir l'image
+                    </button>Voir l&apos;image
                   </a>
                 </td>
                 <td>

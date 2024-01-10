@@ -37,7 +37,7 @@ const PageScheduleList = ({
                           </button>
                       </td> */}
                   </tr>
-              )) :  (<p>Oh, Aucune visite pour l'instant.</p>) 
+              )) :  (<p>Oh, Aucune visite pour l&apos;instant.</p>) 
               }
              
             </tbody>

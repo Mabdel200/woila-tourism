@@ -62,25 +62,25 @@ const ListingCard: React.FC<ListingCardProps> = ({
      onAction?.(actionId)}, [disabled, onAction, actionId]
   ); //End of handleCancel.
 
-  const price = useMemo(() => {
-    if (reservation) {
-      return reservation.totalPrice;
-    }
+  // const price = useMemo(() => {
+  //   if (reservation) {
+  //     return reservation.totalPrice;
+  //   }
 
-    return data.price;},
-    [reservation, data.price]
-  ); //End of price
+  //   return data.price;},
+  //   [reservation, data.price]
+  // ); //End of price
 
 
-  const reservationDate = useMemo(() => {
-    if (!reservation) {
-      return null;
-    }
-    const start = new Date(reservation.startDate);
-    const end = new Date(reservation.endDate);
+  // const reservationDate = useMemo(() => {
+  //   if (!reservation) {
+  //     return null;
+  //   }
+  //   const start = new Date(reservation.startDate);
+  //   const end = new Date(reservation.endDate);
 
-    return `${format(start, 'PP')} - ${format(end, 'PP')}`;},[reservation]
-  ); //End reservationDate
+  //   return `${format(start, 'PP')} - ${format(end, 'PP')}`;},[reservation]
+  // ); //End reservationDate
 
   return (
     <div 
@@ -121,7 +121,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
           </div>
         </div>
         <div className="font-semibold text-lg">
-          {/* {location?.region}, {location?.label} */}
+        
           {data.department}
         </div>
         <div className="flex flex-row items-center gap-1">
@@ -130,7 +130,7 @@ const ListingCard: React.FC<ListingCardProps> = ({
             </div>
         </div>
         <div className="font-light text-neutral-500">
-          {reservationDate || data.category}
+          { data.category}
         </div>
         
         

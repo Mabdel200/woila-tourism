@@ -30,7 +30,7 @@ const Home = async ({ searchParams }: HomeProps) => {
 
       <Container>
         <div className="bg-gradient-to-r pt-16 pb-4 from-red-600 via-yellow-400 via-red-600 to-red-700 h-40 mx-auto rounded-lg shadow-lg flex items-center justify-center text-center">
-              <h1 className="text-3xl font-bold font-abril-fatface pt-6 text-black items-center justify-center text-center">Liste des sites touristiques de l'Extrême-Nord</h1>
+              <h1 className="text-3xl font-bold font-abril-fatface pt-6 text-black items-center justify-center text-center">Liste des sites touristiques de l&apos;Extrême-Nord</h1>
         </div>
       </Container>
       

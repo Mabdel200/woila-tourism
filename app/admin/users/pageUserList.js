@@ -64,7 +64,7 @@ const onDelete = useCallback((id) => {
                           </button>
                       </td>
                   </tr>
-              )) :  (<p>Oh, Aucun utilisateurs pour l'instant.</p>) 
+              )) :  (<p>Oh, Aucun utilisateurs pour l&apos;instant.</p>) 
               }
              
             </tbody>
