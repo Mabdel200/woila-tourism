@@ -29,7 +29,7 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
       <Select
         placeholder="Anywhere"
         isClearable
-        options={countryOptions.options} 
+        options={countryOptions} 
         value="CM"
         onChange={(value) => onChange(value as CountrySelectValue)}
         formatOptionLabel={(option: any) => (
