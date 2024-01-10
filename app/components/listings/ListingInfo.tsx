@@ -1,16 +1,15 @@
 'use client';
 
 import dynamic from "next/dynamic";
-import { IconBaseProps, IconType } from "react-icons";
+import { IconType } from "react-icons";
 
 import useCountries from "@/app/hooks/useCountries";
-import { SafeEvent, SafeListing, SafeUser } from "@/app/types";
+import { SafeEvent, SafeUser } from "@/app/types";
 
 import Avatar from "../Avatar";
 import ListingCategory from "./ListingCategory";
 import ListingEvent from "./ListingEvent";
-import getEventById from "@/app/actions/getEventById";
-import React, { useMemo } from "react";
+import React from "react";
 
 
 const Map = dynamic(() => import('../Map'), { 
@@ -42,7 +41,7 @@ const ListingInfo: React.FC<ListingInfoProps> =  ({
 
 }) => {
 
-  console.log("listingId is :", listingId); 
+  // console.log("listingId is :", listingId); 
 
   const { getByValue } = useCountries();
   const [eventsList, setEventsList] = React.useState<SafeEvent[]>([]);
@@ -57,7 +56,7 @@ const ListingInfo: React.FC<ListingInfoProps> =  ({
           // console.log('Data fetched:', dataEvent);
           setEventsList(dataEvent);
         } catch (error) {
-          console.error('Error fetching data:', error);
+          // console.error('Error fetching data:', error);
         }
       };
       if (typeof window !== 'undefined') {
@@ -110,9 +109,8 @@ const ListingInfo: React.FC<ListingInfoProps> =  ({
       <div className="flex flex-col gap-4">
         <div className="font-semibold text-lg  text-orange-600">Évènements:</div>
           <ListingEvent
-                events={eventsList}            
-           />
-           
+             events={eventsList}           
+          /> 
         </div>
       <hr />
       <div className="

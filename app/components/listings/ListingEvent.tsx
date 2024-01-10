@@ -1,23 +1,14 @@
 'use client';
 
-// import { IconType } from "react-icons";
-// Import the specific icon you want to use
-// import { FaBeer, FaCoffee } from 'react-icons/fa';
-import { SafeEvent,  SafeListing,  } from "@/app/types";
-import { Icon } from 'leaflet';
+import { SafeEvent  } from "@/app/types";
 
 interface ListingEventProps {
-  // icon: Icon,
-  data: SafeListing;
   events: SafeEvent[]
 }
 
 
 const ListingEvent: React.FC<ListingEventProps> = ({ 
-  data,
-  // icon: Icon,
   events,
- 
  }) => {
 
   console.log(events);
