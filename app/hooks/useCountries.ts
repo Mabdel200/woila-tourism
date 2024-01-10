@@ -4,16 +4,16 @@
 import countries from 'world-countries';
 
 // Définissez le type CountrySelectValue
-type CountrySelectValue = {
-  value: string;
-  label: string;
-  flag: string;
-  latlng: [number, number];
-  region: string;
-};
+// type CountrySelectValue = {
+//   value: string;
+//   label: string;
+//   flag: string;
+//   latlng: [number, number];
+//   region: string;
+// };
 
 // Formatez les pays avec le type CountrySelectValue
-const formattedCountries: CountrySelectValue[] = countries.map((country) => ({
+const formattedCountries = countries.map((country) => ({
   value: country.cca2,
   label: country.name.common,
   flag: country.flag,
@@ -21,9 +21,10 @@ const formattedCountries: CountrySelectValue[] = countries.map((country) => ({
   region: country.region,
 }));
 
+
 const useCountries = () => {
-  // La fonction getAll doit renvoyer un objet avec la propriété options
-  const getAll = (): { options: CountrySelectValue[] } => ({
+
+  const getAll = () => ({
     options: formattedCountries,
   });
 
@@ -36,5 +37,6 @@ const useCountries = () => {
     getByValue,
   };
 };
+
 
 export default useCountries;

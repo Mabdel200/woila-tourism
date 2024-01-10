@@ -1,8 +1,8 @@
 'use client';
 
-import Select, { GroupBase } from 'react-select';
+import Select from 'react-select';
 
-import useCountries from '@/app/hooks/useCountries';
+import useCountries  from '@/app/hooks/useCountries';
 
 
 export type CountrySelectValue = {
