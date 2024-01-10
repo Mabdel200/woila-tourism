@@ -15,10 +15,11 @@ import Avatar from "../Avatar";
 
 interface UserMenuProps {
   currentUser?: SafeUser | null
+  adminUser?:SafeUser | null
 }
 
 const UserMenu: React.FC<UserMenuProps> = ({
-  currentUser
+  currentUser, adminUser
 }) => {
   const router = useRouter();
 
@@ -98,46 +99,38 @@ const UserMenu: React.FC<UserMenuProps> = ({
           "
         >
           <div className="flex flex-col cursor-pointer">
-            {currentUser ? (
+          {currentUser ? (
               <>
-                <MenuItem 
-                  label="Mes visites" 
+                <MenuItem
+                  label="Mes planifications"
                   onClick={() => router.push('/trips')}
                 />
-                <MenuItem 
-                  label="Mes favoris" 
+                <MenuItem
+                  label="Mes sites favoris"
                   onClick={() => router.push('/favorites')}
                 />
-                <MenuItem 
-                  label="Mes résèrvations" 
-                  onClick={() => router.push('/reservations')}
-                />
-                <MenuItem 
-                  label="Mes sites" 
-                  onClick={() => router.push('/properties')}
-                />
-                <MenuItem 
-                  label="Administration" 
-                  onClick={rentModal.onOpen}
-                />
                 <hr />
-                <MenuItem 
-                  label="Se déconnecter" 
-                  onClick={() => signOut()}
-                />
+                <MenuItem label="Se déconnecter" onClick={() => signOut()} />
               </>
             ) : (
               <>
-                <MenuItem 
-                  label="Connexion" 
-                  onClick={loginModal.onOpen}
-                />
-                <MenuItem 
-                  label="Inscription" 
-                  onClick={registerModal.onOpen}
-                />
+                <MenuItem label="Connexion" onClick={loginModal.onOpen} />
+                <MenuItem label="Inscription" onClick={registerModal.onOpen} />
               </>
             )}
+            {/* For admin items */}
+            {adminUser ? (
+              <>
+                {/* Admin-specific menu items */}
+                <MenuItem
+                  label="Vos sites touristiques"
+                  onClick={() => router.push('/properties')}
+                />
+                <MenuItem label="Créer un nouveau site" onClick={rentModal.onOpen} />
+                <hr />
+                <MenuItem label="Se déconnecter" onClick={() => signOut()} />
+              </>
+            ) : null}
           </div>
         </div>
       )}

@@ -92,7 +92,7 @@ model Event {
   description String
   startDate String
   endDate String
-  createdAt String
+  // createdAt String
   // createdAt DateTime @default(now())
 
 

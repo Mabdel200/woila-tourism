@@ -2,11 +2,11 @@
 import { Typography, Grid, CardContent, Box } from '@mui/material';
 import PageContainer from '@/app/admin/components/container/PageContainer';
 import Button from '@/app/components/Button';
-import useRentModal from '@/app/hooks/useRentModal';
+import useEventModal from '@/app/hooks/useEventModal';
 import { IconCirclePlus } from '@tabler/icons-react';
 
 import PageEventList from '@/app/admin/utilities/events/pageEventList'
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import React from 'react';
 
 
@@ -38,8 +38,8 @@ const EventPage = () => {
     fetchData();
   }, []);
 
-  const rentModal = useRentModal();
-  console.log("All Events :", listOfEvents);
+  const eventModal = useEventModal();
+
 
   return (
     <>
@@ -57,7 +57,7 @@ const EventPage = () => {
                 // outline
                 label="Ajouter un évènement"
                 icon={IconCirclePlus}
-                onClick={rentModal.onOpen}
+                onClick={ eventModal.onOpen }
                 
               />
           </div>

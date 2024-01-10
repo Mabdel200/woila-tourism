@@ -1,14 +1,13 @@
 'use client';
 
-import {  IconTrash, IconLockSquareRounded } from "@tabler/icons-react";
-
+import { IconCalendarEvent} from "@tabler/icons-react";
 
 const PageScheduleList = ({ 
     dataList,
  }) => {
 
   console.log(dataList);
-
+  
   return ( 
    
         <table className="table table-auto hover:table-fixed w-auto border-collapse border border-slate-400">
@@ -25,8 +24,8 @@ const PageScheduleList = ({
             <tbody>
               { dataList &&  dataList.length > 0 ?   dataList.map((visite, index) => (
                   <tr  key={visite.id} className="text-center" >
-                      <td className="border border-slate-300">{index + 1}</td>
-                      <td className="border border-slate-300">{visite.user}</td>
+                      <td className="border border-slate-300">{index + 1}  <IconCalendarEvent size={18} strokeWidth={1.5} />  </td>
+                      <td className="border border-slate-300">{visite.userId}</td>
                       <td className="border border-slate-300">{visite.listingId}</td>
                       <td className="border border-slate-300">{visite.startDate}</td>
                       <td className="border border-slate-300">{visite.endDate}</td>

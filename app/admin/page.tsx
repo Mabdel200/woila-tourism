@@ -5,8 +5,6 @@ import PageContainer from '@/app/admin/components/container/PageContainer';
 // components
 import SalesOverview from '@/app/admin/components/dashboard/SalesOverview';
 import YearlyBreakup from '@/app/admin/components/dashboard/YearlyBreakup';
-import RecentTransactions from '@/app/admin/components/dashboard/RecentTransactions';
-import ProductPerformance from '@/app/admin/components/dashboard/ProductPerformance';
 import Blog from '@/app/admin/components/dashboard/Blog';
 import MonthlyEarnings from '@/app/admin/components/dashboard/MonthlyEarnings';
 

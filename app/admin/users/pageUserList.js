@@ -1,6 +1,10 @@
 'use client';
 
 import {  IconTrash, IconLockSquareRounded } from "@tabler/icons-react";
+import { useRouter } from "next/navigation";
+import { useCallback, useState } from "react";
+import toast from "react-hot-toast";
+import axios from "axios";
 
 
 const PageUserList = ({ 
@@ -8,6 +12,27 @@ const PageUserList = ({
  }) => {
 
   console.log(dataList);
+//   DELETE USER
+const router = useRouter();
+
+const [userId, setDeletingId] = useState('');
+
+const onDelete = useCallback((id) => {
+  setDeletingId(id);
+
+  axios.delete(`/api/register/${id}`)
+  .then(() => {
+    toast.success('Utilisateur bloqué');
+    router.refresh();
+  })
+  .catch((error) => {
+    toast.error(error?.response?.data?.error)
+  })
+  .finally(() => {
+    setDeletingId('');
+  })
+}, [router]);
+
 
   return ( 
    
@@ -34,7 +59,7 @@ const PageUserList = ({
                      
                       {/* <td className="border border-slate-300">{event.listing}</td> */}
                       <td>
-                          <button className="btn btn-sm mr-3 bg-red-600 text-white mt-2 p-2 rounded-md">
+                          <button  onClick={() => onDelete(user.id)}  className="btn btn-sm mr-3 bg-yellow-600 text-white mt-2 p-2 rounded-md">
                               <IconLockSquareRounded size={18} strokeWidth={1.5} />
                           </button>
                       </td>

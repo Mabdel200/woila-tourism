@@ -3,6 +3,9 @@ import { styled, Container, Box } from "@mui/material";
 import React, { useState } from "react";
 import Header from "@/app/admin/layout/header/Header";
 import Sidebar from "@/app/admin/layout/sidebar/Sidebar";
+import Providers from "../components/Providers";
+import ToasterProvider from "../providers/ToasterProvider";
+import EventModal from "../components/modals/EventModal";
 
 
 const MainWrapper = styled("div")(() => ({
@@ -34,34 +37,35 @@ export default function RootLayout({
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   return (
-    <MainWrapper className="mainwrapper">
-      <Sidebar
-        isSidebarOpen={isSidebarOpen}
-        isMobileSidebarOpen={isMobileSidebarOpen}
-        onSidebarClose={() => setMobileSidebarOpen(false)}
-      />
-      {/* ------------------------------------------- */}
-      {/* Main Wrapper */}
-      {/* ------------------------------------------- */}
-      <PageWrapper className="page-wrapper">
-        {/* ------------------------------------------- */}
-        {/* PageContent */}
-        {/* ------------------------------------------- */}
-        <Container
-          sx={{
-            paddingTop: "10px",
-            maxWidth: "1200px",
-          }}
-        >
+    <Providers>
+      <ToasterProvider />
+      <MainWrapper className="mainwrapper">
+        <EventModal />
+        <Sidebar
+          isSidebarOpen={isSidebarOpen}
+          isMobileSidebarOpen={isMobileSidebarOpen}
+          onSidebarClose={() => setMobileSidebarOpen(false)}
+        />
+        <PageWrapper className="page-wrapper">
           {/* ------------------------------------------- */}
-          {/* Page Route */}
+          {/* PageContent */}
           {/* ------------------------------------------- */}
-          <Box sx={{ minHeight: "calc(100vh - 170px)" }}>{children}</Box>
-          {/* ------------------------------------------- */}
-          {/* End Page */}
-          {/* ------------------------------------------- */}
-        </Container>
-      </PageWrapper>
-    </MainWrapper>
+          <Container
+            sx={{
+              paddingTop: "10px",
+              maxWidth: "1200px",
+            }}
+          >
+            {/* ------------------------------------------- */}
+            {/* Page Route */}
+            {/* ------------------------------------------- */}
+            <Box sx={{ minHeight: "calc(100vh - 170px)" }}>{children}</Box>
+            {/* ------------------------------------------- */}
+            {/* End Page */}
+            {/* ------------------------------------------- */}
+          </Container>
+        </PageWrapper>
+      </MainWrapper>
+    </Providers>
   );
 }

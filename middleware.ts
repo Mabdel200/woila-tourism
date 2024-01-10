@@ -12,7 +12,7 @@ export default withAuth(
 
     if (req.nextUrl.pathname.startsWith("/admin") && req.nextauth.token?.role !== "ADMIN")
       return NextResponse.rewrite(
-        new URL("/?message=You Are Not Authorized!", req.url)
+        new URL("/", req.url)
       );
    
   },

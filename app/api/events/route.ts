@@ -1,54 +1,34 @@
 import { NextResponse } from "next/server";
-
 import prisma from "@/app/libs/prismadb";
-import getCurrentUser from "@/app/actions/getCurrentUser";
 
-export async function POST(
-  request: Request, 
-) {
-  const currentUser = await getCurrentUser();
+export async function POST( request: Request, ) {
+  try {
+      const body = await request.json();
+      const {title, description, startDate, endDate, listingId} = body;
 
-  if (!currentUser) {
-    return NextResponse.error();
+      // Ajoutez la validation pour listingId ici
+      if (!listingId || !/^[a-fA-F0-9]{24}$/.test(listingId)) {
+        return NextResponse.json({ message: "ListingId invalide" }, { status: 400 });
+      }
+
+    
+      const event = await prisma.event.create({
+          data: {
+              title,
+              description,
+              startDate,
+              endDate,
+              listingId,
+          }
+      })
+      
+      console.log("Event Object:", event);
+
+      return NextResponse.json(event);
+
+  } catch(err) {
+      return NextResponse.json({message: "POST Error", err}, {status: 500})
   }
-
-  const body = await request.json();
-  const { 
-    title,
-    description,
-    imageSrc,
-    category,
-    department,
-    // roomCount,
-    // bathroomCount,
-    // guestCount,
-    location,
-    price,
-   } = body;
-
-  Object.keys(body).forEach((value: any) => {
-    if (!body[value]) {
-      NextResponse.error();
-    }
-  });
-
-  const listing = await prisma.listing.create({
-    data: {
-      title,
-      description,
-      imageSrc,
-      category,
-      // roomCount,
-      // bathroomCount,
-      // guestCount,
-      department,
-      locationValue: location.value,
-      price: parseInt(price, 10),
-      userId: currentUser.id
-    }
-  });
-
-  return NextResponse.json(listing);
 }
 
 // region abdel 
@@ -61,7 +41,7 @@ export const GET = async () => {
 
       const listing = await prisma.event.findMany({
         orderBy: {
-          createdAt: 'desc'
+          id: 'desc'
         }
       });
 
