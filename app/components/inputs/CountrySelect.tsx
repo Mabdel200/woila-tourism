@@ -1,8 +1,9 @@
 'use client';
 
-import Select from 'react-select'
+import Select, { GroupBase } from 'react-select';
 
 import useCountries from '@/app/hooks/useCountries';
+
 
 export type CountrySelectValue = {
   flag: string;
@@ -22,13 +23,13 @@ const CountrySelect: React.FC<CountrySelectProps> = ({
   onChange
 }) => {
   const { getAll } = useCountries();
-  const countryOptions = getAll().options || [];
+  const countryOptions = getAll();
   return ( 
     <div>
       <Select
         placeholder="Anywhere"
         isClearable
-        options={countryOptions}
+        options={countryOptions.options} 
         value="CM"
         onChange={(value) => onChange(value as CountrySelectValue)}
         formatOptionLabel={(option: any) => (
