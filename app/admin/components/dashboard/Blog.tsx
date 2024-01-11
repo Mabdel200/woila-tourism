@@ -16,9 +16,9 @@ import BlankCard from "@/app/admin/components/shared/BlankCard";
 import Image from "next/image";
 
 // Here import of images
-const img1 : string = "https://res.cloudinary.com/dwbmmkqnl/image/upload/v1703859297/mo3ihe5qkobxyytzttev.jpg";
-const img2 : string = "https://res.cloudinary.com/dwbmmkqnl/image/upload/v1703855974/uh5hscmlkeemh4y8flhk.jpg";
-const img3 : string = "https://res.cloudinary.com/dwbmmkqnl/image/upload/v1702148836/o0uosg3jwlgwro9pxkwn.jpg";
+const img1 : string = "https://res.cloudinary.com/dwbmmkqnl/image/upload/v1704797151/sjnsqcbgok6wtoiki3ju.jpg";
+const img2 : string = "https://res.cloudinary.com/dwbmmkqnl/image/upload/v1704797435/vjwerbp9098sxr6lv1a6.jpg";
+const img3 : string = "https://res.cloudinary.com/dwbmmkqnl/image/upload/v1702208817/xa3creafmojd83tvpmis.jpg";
 const img4 : string = "https://res.cloudinary.com/dwbmmkqnl/image/upload/v1702151193/wztohesthfvlpeiq3btl.jpg";
 
 

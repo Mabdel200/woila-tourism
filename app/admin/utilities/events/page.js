@@ -45,7 +45,7 @@ const EventPage = () => {
     <>
     <Box>
       <div className="bg-gradient-to-r  from-red-600 via-yellow-400 via-red-600 to-red-700 h-20 mx-auto rounded-md shadow-lg flex items-center justify-center text-center">
-            <h1 className="text-2xl font-bold font-abril-fatface  text-black items-center justify-center text-center">Géré les évènements</h1>
+            <h1 className="text-2xl font-bold font-abril-fatface  text-black items-center justify-center text-center">Gérér les évènements</h1>
       </div>
     </Box>
     <PageContainer title="Evenement" description="this is event page manager">
