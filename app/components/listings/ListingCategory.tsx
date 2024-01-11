@@ -16,19 +16,19 @@ const CategoryView: React.FC<CategoryViewProps> = ({
   // events
  }) => {
   return ( 
-    <div className="flex flex-col gap-6">
+    <div className="ml-4 flex flex-col gap-6">
       <div className="flex flex-row items-center gap-4">
-        <Icon size={40} className="text-neutral-600" />
+        <Icon size={20} className="text-black" />
         <div className="flex flex-col">
             <div 
-              className="text-lg font-semibold"
+              className="text-lg font-bold text-black"
             >
               {label}
             </div>
             <div 
               className="text-neutral-500 font-light"
             >
-              {description}
+              
             </div>
           </div>
       </div>

@@ -11,6 +11,10 @@ import ListingCategory from "./ListingCategory";
 import ListingEvent from "./ListingEvent";
 import React from "react";
 
+// Add Style for Slider
+import "./slideCss/slider.css";
+import Listinghotel from "./Listinghotel";
+import Button from "../Button";
 
 const Map = dynamic(() => import('../Map'), { 
   ssr: false 
@@ -71,52 +75,65 @@ const ListingInfo: React.FC<ListingInfoProps> =  ({
       <div className="flex flex-col gap-2">
         <div 
           className="
-            text-xl 
-            font-semibold 
-            flex 
-            flex-row 
-            items-center
-            gap-2
+          font-bold
+          text-sm
+          text-black
+          flex 
+          flex-row 
+          items-center
+          gap-2
           "
         >
           <div>Publié par {user?.name}</div>
           <Avatar src={user?.image} />
         </div>
-        <div className="
-            flex 
-            flex-row 
-            items-center 
-            gap-4 
-            font-light
-            text-neutral-500
-          "
-        >
         </div>
-      </div>
-      <hr />
-      {category && (
-        <ListingCategory
-          icon={category.icon} 
-          label={category?.label}
-          description={category?.description} 
-         
-        />
-      )}
-      <hr />
+        <hr />
+          <div className="
+              flex 
+              flex-row 
+              items-center 
+            
+              font-gray
+              text-sm
+            "
+          >
+         Categorie : 
+        {category && (
+          <ListingCategory
+            icon={category.icon} 
+            label={category?.label}
+            description={category?.description} 
+          
+          />
+        )}
+
+        </div>
+        <hr />
+        {/* Description */}
+        <div className="
+           text-base font-semibold text-neutral-600 text-justify">
+           &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{description}
+        </div>
      {/* Afficher la liste des événements */}
       <div className="flex flex-col gap-4">
-        <div className="font-semibold text-lg  text-orange-600">Évènements:</div>
+       
+        <div className="font-semibold text-xl  text-orange-600">Évènements d&apos;actualités :</div>
           <ListingEvent
-             events={eventsList}           
+            events={eventsList}           
           /> 
-        </div>
-      <hr />
-      <div className="
-      text-lg font-light text-neutral-500">
-        {description}
       </div>
-      <hr />
-      <Map center={coordinates} />
+      {/*  List of Hotel */}
+      <div className="flex flex-col ">
+        <div className="font-semibold text-xl  text-orange-600">Hôtel à proximité :</div>
+            <Listinghotel />     
+        </div>
+    
+      {/* Map  */}
+      <div className="shadow-xl">
+         <Map center={coordinates} />
+      </div>
+       
     </div>
      
    );

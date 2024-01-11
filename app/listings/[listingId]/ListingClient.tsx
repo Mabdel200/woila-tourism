@@ -159,9 +159,7 @@ const ListingClient: React.FC<ListingClientProps> = ({
                 onSubmit={onCreateReservation}
                 disabled={isLoading}
                 disabledDates={disabledDates} 
-                onAccommodationChange={function (): void {
-                  throw new Error("Function not implemented.");
-                } } isAccommodationRequested={false}              
+               
                 />
             </div>
           </div>

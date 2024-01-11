@@ -2,12 +2,12 @@
 import "./StyleCss/style.css";
 interface HeadingProps {
   title: string;
-  subtitle?: string | null;
+  subtitle?:string | null;
   center?: boolean;
   department?:string | null;
 }
 
-const Heading: React.FC<HeadingProps> = ({ 
+const HeadingInfo: React.FC<HeadingProps> = ({ 
   title, 
   subtitle,
   center,
@@ -16,13 +16,13 @@ const Heading: React.FC<HeadingProps> = ({
   return ( 
     <div className={center ? 'text-center' : 'text-start'}>
       <div className="text-2xl font-bold titlemessage">
-        {title}
+        Bienvenue au {title}
       </div>
-      <div className="font-light text-neutral-500 mt-2">
-      <span className="text-black font-bold">{subtitle}</span>
+      <div className="font-light text-black-500 mt-2">
+        Département : <span className="text-black font-bold">{subtitle}</span>
       </div>
     </div>
    );
 }
  
-export default Heading;
+export default HeadingInfo;

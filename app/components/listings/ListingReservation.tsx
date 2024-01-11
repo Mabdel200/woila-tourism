@@ -11,8 +11,8 @@ interface ListingReservationProps {
   totalPrice: number;
   onChangeDate: (value: Range) => void;
   onSubmit: () => void;
-  onAccommodationChange: (value: boolean) => void; // Nouvelle fonction pour gérer le changement d'état du checkbox
-  isAccommodationRequested: boolean; // Nouvel état pour déterminer si l'hébergement est demandé
+  // onAccommodationChange: (value: boolean) => void; // Nouvelle fonction pour gérer le changement d'état du checkbox
+  // isAccommodationRequested: boolean; // Nouvel état pour déterminer si l'hébergement est demandé
   disabled?: boolean;
   disabledDates: Date[];
 }
@@ -25,8 +25,8 @@ const ListingReservation: React.FC<
   totalPrice,
   onChangeDate,
   onSubmit,
-  onAccommodationChange, // Nouvelle fonction
-  isAccommodationRequested, // Nouvel état
+  // onAccommodationChange, // Nouvelle fonction
+  // isAccommodationRequested, // Nouvel état
   disabled,
   disabledDates
 }) => {
@@ -36,8 +36,10 @@ const ListingReservation: React.FC<
       bg-white 
         rounded-xl 
         border-[1px]
+        shadow-xl
       border-neutral-200 
         overflow-hidden
+        stylecard
       "
     >
       <div className="
@@ -47,10 +49,9 @@ const ListingReservation: React.FC<
         </div>
        
       </div>
-      <hr />
       {/* ====================================== */}
       {/* Ajout du champ de type checkbox */}
-      <div className=" flex flex-row items-center gap-2 p-4">
+      {/* <div className=" flex flex-row items-center gap-2 p-4">
         <label className="flex items-center">
           <input
             type="checkbox"
@@ -63,7 +64,7 @@ const ListingReservation: React.FC<
             </div>
           
         </label>
-      </div>
+      </div> */}
       {/* ====================================== */}
       <hr />
       <div className="p-4 ">

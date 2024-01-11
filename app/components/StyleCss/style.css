@@ -1,0 +1,44 @@
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 60%;
+  }
+}
+
+@keyframes blink-caret {
+  from, to {
+    border-color: transparent;
+  }
+  50% {
+    border-color: orange;
+  }
+}
+
+.titlemessage {
+  font-weight: bold;
+  color : rgba(255, 0, 0, 0.6);
+  overflow: hidden; /* Pour cacher le texte qui dépasse */
+  white-space: nowrap; /* Pour empêcher le saut de ligne */
+  border-right: 2px solid orange; /* Pour créer l'effet de clignotement du curseur */
+  animation: typing 8s steps(20) infinite,
+             blink-caret 0.75s step-end 3;
+}
+
+@keyframes erasing {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0;
+  }
+}
+
+.erasing-animation {
+  overflow: hidden; /* Pour cacher le texte qui dépasse */
+  white-space: nowrap; /* Pour empêcher le saut de ligne */
+  border-right: 2px solid orange; /* Pour créer l'effet de clignotement du curseur */
+  animation: erasing 2s steps(20) infinite,
+             blink-caret 0.75s step-end infinite;
+}

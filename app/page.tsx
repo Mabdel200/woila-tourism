@@ -66,7 +66,7 @@ const Home = async ({ searchParams }: HomeProps) => {
        {/* Copyright footer */}
        <footer className="text-center py-4 text-gray-800 bg-gray-300 fixed bottom-0 w-full">
         <p>
-          &copy; {new Date().getFullYear()} All rights reserved woila-tourism, Built with ❤️ by Mister Abz.{" "}
+          &copy; {new Date().getFullYear()} All rights reserved woila-tourism, Built with ❤️ by software engineers from ENSPM promo 2.{" "}
         </p>
       </footer>
        {/* <footer className="text-center py-4 text-gray fixed bottom-0 w-full">
